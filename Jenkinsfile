@@ -5,17 +5,15 @@ pipeline{
     stages{
          
         stage('Git Checkout'){
-                    when { expression {  params.action == 'create' } }
+                    
             steps{
-            gitCheckout(
-                branch: "main",
-                url: "https://github.com/sagarshettyr243/MotoGP.git"
-            )
+            script{
+                git branch: 'main', url: 'https://github.com/sagarshettyr243/MotoGP.git'
+            
             }
         }
          
                }
             }
         }      
-    }
-}
+    
